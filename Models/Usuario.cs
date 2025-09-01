@@ -7,9 +7,9 @@ namespace MarketPlace.Models
         [Key]
         public Guid Id { get; set; }
 
-        [Required(ErrorMessage = "O campo Nome e obrigatorio!")]
+        /* [Required(ErrorMessage = "O campo Nome e obrigatorio!")]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "O campo Nome deve ter entre 50 e 3 caracteres")]
-        public string Nome { get; set; }
+        public string Nome { get; set; } */
 
         [Required(ErrorMessage = "O campo Login e obrigatorio!")]
         [StringLength(20, MinimumLength = 3, ErrorMessage = "O campo Login deve ter entre 20 e 3 caracteres")]

@@ -15,7 +15,7 @@ namespace MarketPlace.Models
         [StringLength(10, MinimumLength = 3, ErrorMessage = "O campo Nome deve ter entre 3 e 10 caracteres")]
         public string Numero { get; set; }
 
-        public string Complemento { get; set; }
+        public string? Complemento { get; set; }
 
         [Required(ErrorMessage = "O campo Bairro e obrigatorio")]
         [StringLength(20, MinimumLength = 3, ErrorMessage = "O campo Bairro deve ter entre 3 e 20 caracteres")]

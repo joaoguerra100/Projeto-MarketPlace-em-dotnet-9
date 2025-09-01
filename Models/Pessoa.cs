@@ -30,6 +30,7 @@ namespace MarketPlace.Models
         public string Genero { get; set; }
 
         public ICollection<Endereco> Enderecos { get; set; }
+
         public Usuario Usuario { get; set; }
 
         public Pessoa()

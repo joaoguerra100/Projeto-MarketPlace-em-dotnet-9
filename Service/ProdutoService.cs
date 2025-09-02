@@ -60,10 +60,10 @@ namespace MarketPlace.Service
             return await _produtoRepository.ObterPaginadoAsync(termoBusca, pagina, tamanhoPagina, ordemDesc);
         }
 
-        public async Task<Produto> CriarNovoProdutoAsync(ProdutoDto produtoDto)
+        public async Task<Produto> CriarNovoProdutoAsync(CriarProdutoDto CriarProdutoDto)
         {
             //Passo 1: Checa se o preço do produto e maior ou igual a zero, se ele e valido
-            if (produtoDto.Preco <= 0)
+            if (CriarProdutoDto.Preco <= 0)
             {
                 throw new ArgumentException("O preço do Produto nao pode ser zero ou negativo.");
             }
@@ -71,12 +71,12 @@ namespace MarketPlace.Service
             //Passo 2: Mapeamento do DTO para a Entidade Produto
             var novoProduto = new Produto
             {
-                Nome = produtoDto.Nome,
-                Descricao = produtoDto.Descricao,
-                Preco = produtoDto.Preco,
-                QtdEstoque = produtoDto.QtdEstoque,
-                VendedorId = produtoDto.VendedorId,
-                CategoriaId = produtoDto.CategoriaId,
+                Nome = CriarProdutoDto.Nome,
+                Descricao = CriarProdutoDto.Descricao,
+                Preco = CriarProdutoDto.Preco,
+                QtdEstoque = CriarProdutoDto.QtdEstoque,
+                VendedorId = CriarProdutoDto.VendedorId,
+                CategoriaId = CriarProdutoDto.CategoriaId,
                 //Passo 3: Aplicação da Lógica de Negócio (Regras do Servidor)
                 Status = "Ativo",
                 DataDeCriacao = DateTime.UtcNow,

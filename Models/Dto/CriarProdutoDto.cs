@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace MarketPlace.Models.Dto
 {
-    public class ProdutoDto
+    public class CriarProdutoDto
     {
         [Required(ErrorMessage = "O campo Nome é obrigatório!")]
         [StringLength(200, MinimumLength = 3)]

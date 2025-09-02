@@ -12,7 +12,7 @@ namespace MarketPlace.Models
         public Guid? CategoriaPaiId { get; set; }
 
         //Propriedade de navegação para a categoria Pai
-        public Categoria CategoriaPai { get; set; }
+        public Categoria? CategoriaPai { get; set; }
 
         //Propriedade para navegação para a lista de subcategoria filhas
         public ICollection<Categoria> SubCategorias { get; set; }

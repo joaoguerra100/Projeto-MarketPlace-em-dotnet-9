@@ -9,7 +9,7 @@ namespace MarketPlace.Interface.Service
         Task<IEnumerable<Produto>> ObterTodosProtudosAsync();
         Task<IEnumerable<Produto>> PesquisaPorProdutoAsync(string valor);
         Task<PaginacaoResponse<Produto>> ObterPessoasPaginadoAsync(string? termoBusca, int pagina, int tamanhoPagina, bool ordemDesc);
-        Task<Produto> CriarNovoProdutoAsync(ProdutoDto produtoDto);
+        Task<Produto> CriarNovoProdutoAsync(CriarProdutoDto CriarProdutoDto);
         Task AtualizarProdutoAsync(Produto produto);
         Task DeletarProdutoAsync(Guid id);
     }

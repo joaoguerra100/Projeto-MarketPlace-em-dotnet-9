@@ -88,7 +88,7 @@ namespace MarketPlace.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CriarProduto([FromBody] ProdutoDto produtoDto)
+        public async Task<IActionResult> CriarProduto([FromBody] CriarProdutoDto CriarProdutoDto)
         {
             if (!ModelState.IsValid)
             {
@@ -97,7 +97,7 @@ namespace MarketPlace.Controllers
 
             try
             {
-                var produtoCriado = await _produtoService.CriarNovoProdutoAsync(produtoDto);
+                var produtoCriado = await _produtoService.CriarNovoProdutoAsync(CriarProdutoDto);
                 return CreatedAtAction(nameof(GetProduto), new { id = produtoCriado.Id }, produtoCriado);
             }
             catch (ArgumentException ex)
